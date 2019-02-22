@@ -10,7 +10,7 @@ namespace PageObjects.Pages
 {
    public class CountriesPage
     {
-
+        //Returns the list of countries
         public static string lstCountries = "Name=conlist";
       //  public static string lstCountries = "Name=abc";
         public static IList<string> expCountries = new List<string>();
