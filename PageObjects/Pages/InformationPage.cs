@@ -15,7 +15,7 @@ namespace PageObjects
     {
         //public static IWebElement objElement; we can use if we want directly create normal element and pass it
         
-        public static string txtUserName = "Id=username";
+        public static string txtUserName = "Id=username";//findelement.by.id("username")
         public static string txtPassword = "Name=password";
         public static string txtEmailId   = "Name=email";
         public static string txtLocation = "Id=location";
@@ -23,6 +23,7 @@ namespace PageObjects
         public static string txtMsg = "Name=Input2";
         public static string btnSubmit = "XPath=//input[@value='Submit']";
         public static string btnOk = "XPath=//input[@value='OK']";
+        public static string txtFirstName = "Name=firstname";
 
         public static void EnterUserInfo(string uname,string pwd,string email,string loc)
         {
@@ -44,7 +45,7 @@ namespace PageObjects
         {
             string actMsg = UITextFiled.GetText(txtMsg);
             return actMsg;
-
+            
         }
 
 
@@ -75,6 +76,12 @@ namespace PageObjects
 
         }
 
+        public static void EnterFirstName()
+        {
+            UITextFiled.EnterText(txtFirstName, "rathan");
+            Thread.Sleep(3000);
+
+        }
 
 
 

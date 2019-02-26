@@ -32,7 +32,8 @@ namespace Library
                     break;
                 case BrowserType.Chrome:
                     BrowserDriver.GetChromeDriver();
-                    objDriver.Navigate().GoToUrl(url);
+                    objDriver.Navigate().GoToUrl(url);  // objDriver.Url = url;
+
                     objDriver.Manage().Window.Maximize();
                     Reporter.Report("Pass", "Application launched on Chrome sucessfully");
                     break;

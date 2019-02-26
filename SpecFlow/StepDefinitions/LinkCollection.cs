@@ -19,6 +19,7 @@ namespace SpecFlow.StepDefinitions
         [Then(@"Verify no\.of links on page")]
         public void ThenVerifyNo_OfLinksOnPage()
         {
+
             LinkCheckPage.VerifyLinkCount();
         }
 

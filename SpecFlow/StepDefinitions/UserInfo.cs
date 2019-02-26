@@ -15,7 +15,7 @@ namespace SpecFlow
         [Given(@"User navigates to the site")]
         public void GivenUserNavigateToSite()
         {
-            // hooks  will invoke this
+            //InformationPage.EnterFirstName();
         }
 
         [When(@"Enter data in (.*) (.*) (.*) (.*)")]
@@ -33,18 +33,20 @@ namespace SpecFlow
         [Then(@"Login sucessful text will display in text filed (.*)")]
         public void ThenLoginSucessfulTextWillDisplayInTextFiled(string expVal)
         {
-            Assert.AreEqual(expVal, InformationPage.GetLoginValidationMessage());
+          //  Assert.AreEqual(expVal, InformationPage.GetLoginValidationMessage());
         }
 
         [Then(@"page shoud contains following buttons")]
         public void ThenPageShoudContainsFollowingButtons(Table table)
         {
-           // this is for sigle line data, at step level
+            // this is for sigle line data, at step level
 
-           var tableData = table.CreateInstance<TableData>();
+            var tableData = table.CreateInstance<TableData>();
             Assert.AreEqual(tableData.Button1, InformationPage.IsLoginExist());
             Console.WriteLine(tableData.Button2, InformationPage.IsSubmitExist());
             Console.WriteLine(tableData.Button2, InformationPage.IsOKExist());
+
+
             // this is for multiple lines fo data, at step level
             //var tabledata1 = table.createset<tabledata>();
             //foreach (var item in tabledata1)
@@ -54,7 +56,7 @@ namespace SpecFlow
             //    console.writeline(item.button3);
         }
 
-        }
+    }
         
 
 
