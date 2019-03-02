@@ -22,14 +22,14 @@ namespace Library.Utilites
                 DirectoryInfo ParentDir = info.Directory;
                 Console.WriteLine(ParentDir);
                 ProjectPath = ParentDir.ToString();
-               
+
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine(ex.Message);
             }
-          //  return ProjectPath;
+            //  return ProjectPath;
         }
 
 

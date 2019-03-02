@@ -13,75 +13,65 @@ namespace PageObjects
 {
    public class InformationPage//:Selenium
     {
-        //public static IWebElement objElement; we can use if we want directly create normal element and pass it
-        
-        public static string txtUserName = "Id=username";//findelement.by.id("username")
-        public static string txtPassword = "Name=password";
-        public static string txtEmailId   = "Name=email";
-        public static string txtLocation = "Id=location";
-        public static string btnLogin = "XPath=//input[@value='Login']";
-        public static string txtMsg = "Name=Input2";
-        public static string btnSubmit = "XPath=//input[@value='Submit']";
-        public static string btnOk = "XPath=//input[@value='OK']";
-        public static string txtFirstName = "Name=firstname";
+         private By txtUserName1=  By.Id("username");  
+        private  string txtUserName = "Id=username";//findelement.by.id("username")
+        private string txtPassword = "Name=password";
+        private string txtEmailId   = "Name=email";
+        private string txtLocation = "Id=location";
+        private string btnLogin = "XPath=//input[@value='Login']";
+        private string txtMsg = "Name=Input2";
+        private string btnSubmit = "XPath=//input[@value='Submit']";
+        private string btnOk = "XPath=//input[@value='OK']";
 
-        public static void EnterUserInfo(string uname,string pwd,string email,string loc)
+      
+        public  void EnterUserInfo(IWebDriver objDriver, string uname,string pwd,string email,string loc)
         {
-       
-                UITextFiled.EnterText(txtUserName, uname);
-                UITextFiled.EnterText(txtPassword, pwd);
-                UITextFiled.EnterText(txtEmailId, email);
-                UITextFiled.EnterText(txtLocation, loc);
+          
+            UITextFiled.EnterText(objDriver, txtUserName, uname);
+            UITextFiled.EnterText(objDriver, txtPassword, pwd);
+            UITextFiled.EnterText(objDriver, txtEmailId, email);
+            UITextFiled.EnterText(objDriver, txtLocation, loc);
         }
 
-        public static void ClickOnLoginButton()
-        {   
-           UIButton.Click(btnLogin);
+        public  void ClickOnLoginButton(IWebDriver objDriver)
+        {
+            UIButton.Click(objDriver, btnLogin);
             Thread.Sleep(3000);
-
         }
 
-        public static string GetLoginValidationMessage()
+        public  string GetLoginValidationMessage(IWebDriver objDriver)
         {
-            string actMsg = UITextFiled.GetText(txtMsg);
+            string actMsg = UITextFiled.GetText(objDriver, txtMsg);
             return actMsg;
             
         }
 
 
-        public static string IsLoginExist()
+        public  string IsLoginExist(IWebDriver objDriver)
         {
-            string actMsg = UIButton.GetCaption(btnLogin);
+            string actMsg = UIButton.GetCaption(objDriver, btnLogin);
             return actMsg;
 
         }
 
 
-        public static string IsSubmitExist()
+        public  string IsSubmitExist(IWebDriver objDriver)
         {
-            string actMsg = UIButton.GetCaption(btnSubmit);
+            string actMsg = UIButton.GetCaption(objDriver, btnSubmit);
             MessageBox.Show("Just Verifying button names, No action on applcation");
 
             return actMsg;
-            
-
-
         }
 
 
-        public static string IsOKExist()
+        public  string IsOKExist(IWebDriver objDriver)
         {
-            string actMsg = UIButton.GetCaption(btnOk);
+            string actMsg = UIButton.GetCaption(objDriver, btnOk);
             return actMsg;
 
         }
 
-        public static void EnterFirstName()
-        {
-            UITextFiled.EnterText(txtFirstName, "rathan");
-            Thread.Sleep(3000);
-
-        }
+      
 
 
 

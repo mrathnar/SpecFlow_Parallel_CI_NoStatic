@@ -6,13 +6,13 @@ namespace Library
 {
    public class UITextFiled//:Selenium
     {
-
-        public static  void EnterText(string txtTextField,string data)
+     // Selenium selenium = new Selenium();
+        public  static void EnterText(IWebDriver objDr,string txtTextField,string data)
         {
             try
             {
                 Thread.Sleep(2000);
-                Selenium.GetObject(txtTextField).SendKeys(data);
+                Selenium.GetObject(objDr,txtTextField).SendKeys(data);
                 Reporter.Report("Pass","value  "+"\""+data+"\""+" entered sucusessfully");
 
 
@@ -25,15 +25,15 @@ namespace Library
         }
 
 
-        public static string GetText(string txtTextField)
+        public static string GetText(IWebDriver objDr,string txtTextField)
         {
             string strActText=null;
 
             try
             {
                 Thread.Sleep(2000);
-                strActText=Selenium.GetObject(txtTextField).GetAttribute("value");
-               //return strActText;
+               strActText=Selenium.GetObject(objDr,txtTextField).GetAttribute("value");
+               return strActText;
             }
             catch (Exception e)
             {

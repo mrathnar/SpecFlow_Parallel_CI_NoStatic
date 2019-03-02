@@ -1,4 +1,5 @@
-﻿using Library.Wrappers;
+﻿using Library;
+using Library.Wrappers;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -8,18 +9,20 @@ using System.Threading.Tasks;
 
 namespace PageObjects.Pages
 {
-  
+   
 
     public class LinkCheckPage
     {
-             public static string lnkLink = "TagName=a";
 
-      
+        private string lnkLink = "TagName=a";
 
-        public static void VerifyLinkCount()
+        UILink objLink = new UILink();
+
+        public  void VerifyLinkCount(IWebDriver objDriver)
         {
 
-            UILink.GetLinkCount(lnkLink);
+            
+            objLink.GetLinkCount(objDriver, lnkLink);
 
         }
 

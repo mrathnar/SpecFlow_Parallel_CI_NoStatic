@@ -13,57 +13,87 @@ using OpenQA.Selenium.Support.UI;
 
 namespace Library
 {
-   public class Selenium
+    public  class Selenium
     {
-       // static ConcurrentDictionary<TestInstance, IWebDriver> InstanceMap = new ConcurrentDictionary<TestInstance, IWebDriver>();
-      //  public static IWebDriver WebDriver = null;
-        public static By by;
-        public static IWebElement PageObject;
-        public static IList<IWebElement> PageObjectCollection;
+        // static ConcurrentDictionary<TestInstance, IWebDriver> InstanceMap = new ConcurrentDictionary<TestInstance, IWebDriver>();
+        //  public static IWebDriver WebDriver = null;
+        public static  By by;
+        public static  IWebElement PageObject;
+        public static  IList<IWebElement> PageObjectCollection;
         public static string parentWIndow = null;
-        public static IWebElement GetObject(string props)
+       // UIBrowser browser = new UIBrowser();
+        public  static  IWebElement GetObject(IWebDriver objDriver, string props)
         {
+            try
+            {
 
-            //string txtUserName = "Id=ctl00_SPWebPartManager1_g_be0b090f_59b9_4c2b_95a6_7ba14fae62c2_ctl00_LoginControl_UserNameLabel";
-            //string txtUserName = "Name=ctl00$SPWebPartManager1$g_be0b090f_59b9_4c2b_95a6_7ba14fae62c2$ctl00$LoginControl$txt_UserName";
-            //string[] objProp = props.Split('=');P
-            string[] objProp = props.Split(new[] { "=" }, 2, StringSplitOptions.None);//2 means devides into two strings based on first occurance of =
-           // XPath =//input[@value='OK']
 
-            Type ClassName = typeof(By);//
-            MethodInfo MethodName = ClassName.GetMethod(objProp[0]);
-            By objProperty = (By)MethodName.Invoke(by, new object[] { objProp[1] });
-            //objDriver.FindElement(by.XPath("//input[@value='OK']")
+                string[] objProp = props.Split(new[] { "=" }, 2, StringSplitOptions.None);//2 means devides into two strings based on first occurance of =
+                                                                                          // XPath =//input[@value='OK']
 
-            Type objType = BrowserDriver.objDriver.GetType();
-            MethodInfo objMethod = objType.GetMethod("FindElement");
-           // WaitForObject(objProperty);
-            PageObject = (IWebElement)objMethod.Invoke(BrowserDriver.objDriver, new object[] { objProperty });
-           return PageObject;
+                Type ClassName = typeof(By);//
+                MethodInfo MethodName = ClassName.GetMethod(objProp[0]);
+                By objProperty = (By)MethodName.Invoke(by, new object[] { objProp[1] });
+                //objDriver.FindElement(by.XPath("//input[@value='OK']")
+
+                Type objType = objDriver.GetType();
+                MethodInfo objMethod = objType.GetMethod("FindElement");
+                if (WaitForObject(objDriver, objProperty))
+                {
+                    PageObject = (IWebElement)objMethod.Invoke(objDriver, new object[] { objProperty });
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return PageObject;
+           
         }
 
-        public static IList<IWebElement> GetObjects(string props)
+        public  static IList<IWebElement> GetObjects(IWebDriver objDriver, string props)
         {
+            try
+            {
+                string[] objProp = props.Split(new[] { "=" }, 2, StringSplitOptions.None);
 
-            string[] objProp = props.Split(new[] { "=" }, 2, StringSplitOptions.None);
-            
-            Type ClassName = typeof(By);
-            MethodInfo MethodName = ClassName.GetMethod(objProp[0]);
-            By objProperty = (By)MethodName.Invoke(by, new object[] { objProp[1] });
-
-            Type objType = BrowserDriver.objDriver.GetType();
-            MethodInfo objMethod = objType.GetMethod("FindElements");
-            
-            PageObjectCollection = (IList<IWebElement>)objMethod.Invoke(BrowserDriver.objDriver, new object[] { objProperty });
+                Type ClassName = typeof(By);
+                MethodInfo MethodName = ClassName.GetMethod(objProp[0]);
+                By objProperty = (By)MethodName.Invoke(by, new object[] { objProp[1] });
+                // BrowserDriver browserDriver = new BrowserDriver();
+                Type objType = objDriver.GetType();
+                MethodInfo objMethod = objType.GetMethod("FindElements");
+                if (WaitForObject(objDriver, objProperty))
+                {
+                    PageObjectCollection = (IList<IWebElement>)objMethod.Invoke(objDriver, new object[] { objProperty });
+                }
+               }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             return PageObjectCollection;
-
+           
         }
+            
 
-        public static void WaitForObject(By objElement)
+
+
+        public  static bool  WaitForObject(IWebDriver objD,By objElement)
         {
-           WebDriverWait wait = new WebDriverWait(BrowserDriver.objDriver, TimeSpan.FromSeconds(10));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(objElement));
-            //IWebElement element = wait.Until(driver => BrowserDriver.objDriver.FindElement(By.Id("kk")));
+             try
+             {
+            WebDriverWait wait = new WebDriverWait(objD, TimeSpan.FromSeconds(10));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(objElement));
+                //IWebElement element = wait.Until(driver => BrowserDriver.objDriver.FindElement(By.Id("kk")));
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message+"object not found");
+                return false;
+            }
         }
     }
-}
+        }
+    

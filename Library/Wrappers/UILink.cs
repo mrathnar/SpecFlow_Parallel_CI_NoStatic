@@ -9,12 +9,13 @@ namespace Library.Wrappers
 {
    public class UILink
     {
-        public static void GetLinkCount(string lnkLink)
+       // Selenium selenium = new Selenium();
+        public  void GetLinkCount(IWebDriver objDr,string lnkLink)
         {
             try
             {
-                IList<IWebElement> lnkCollection = Selenium.GetObjects(lnkLink);
-                Reporter.Report("Pass", "No.of links on page are : " + lnkCollection.Count);
+              IList<IWebElement> lnkCollection = Selenium.GetObjects(objDr,lnkLink);
+              Reporter.Report("Pass", "No.of links on page are : " + lnkCollection.Count);
             }
                 catch(Exception e)
             {

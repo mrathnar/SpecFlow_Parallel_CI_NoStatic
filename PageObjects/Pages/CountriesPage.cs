@@ -1,4 +1,5 @@
 ﻿using Library;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,25 +12,18 @@ namespace PageObjects.Pages
    public class CountriesPage
     { 
         //Returns the list of countries
-        public static string lstCountries = "Name=conlist";
-      //  public static string lstCountries = "Name=abc";
-        public static IList<string> expCountries = new List<string>();
-
-
-
-
-        public static void VerifyDisplayofCountriesListBox()
+        private string lstCountries = "Name=conlist";
+        public  IList<string> expCountries = new List<string>();
+        public  void VerifyDisplayofCountriesListBox(IWebDriver objDriver)
         {
-            // Check the list of countries
-            // Comment from Temp Branch
-               UIListBox.isDisplayed(lstCountries);
+            UIListBox.isDisplayed(objDriver, lstCountries);
 
         }
-        public static void VerifyCountryNames()
+        public  void VerifyCountryNames(IWebDriver objDriver)
         {
 
-            UIListBox.VeriryListItems(lstCountries,expCountries);
-            MessageBox.Show("Just Verifying country names, No action on applcation");
+            UIListBox.VeriryListItems(objDriver, lstCountries, expCountries);
+           MessageBox.Show("Just Verifying country names, No action on applcation");
             
 
         }
