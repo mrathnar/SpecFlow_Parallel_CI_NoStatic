@@ -108,8 +108,6 @@
       <DependentUpon>LinkCollection.feature</DependentUpon>
     </Compile>
     <Compile Include="Hooks\Hooks.cs" />
-    <Compile Include="Hooks\Hooks2.cs" />
-    <Compile Include="Hooks\Hooks1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefinitions\CountriesList.cs" />
     <Compile Include="StepDefinitions\LinkCollection.cs" />
