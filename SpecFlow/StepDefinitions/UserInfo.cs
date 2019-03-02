@@ -69,7 +69,7 @@ namespace SpecFlow
             //foreach (var item in tabledata1)
             //{
             //    console.writeline(item.button1);
-            //    console.writeline(item.button2);
+            ////    console.writeline(item.button2);
             //    console.writeline(item.button3);
         }
 
