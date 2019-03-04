@@ -14,7 +14,7 @@ namespace SpecFlow.StepDefinitions
     [Binding]
     public sealed class CountriesList
     {
-
+        // add comment
         private UIBrowser _browser;
         private CountriesPage _countriesPage;
 
