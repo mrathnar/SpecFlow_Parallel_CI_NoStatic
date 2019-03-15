@@ -71,21 +71,28 @@ namespace SpecFlow.API.RestFeatures
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Test response of Get method  using end point")]
+        [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.TestCaseAttribute("Hyderaba", null)]
         [NUnit.Framework.TestCaseAttribute("Chennai", null)]
         [NUnit.Framework.TestCaseAttribute("Bangalore", null)]
         [NUnit.Framework.TestCaseAttribute("Kerala", null)]
         public virtual void TestResponseOfGetMethodUsingEndPoint(string cityName, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test response of Get method  using end point", null, exampleTags);
-#line 2
+            string[] @__tags = new string[] {
+                    "API"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test response of Get method  using end point", null, @__tags);
+#line 3
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 3
-testRunner.Given("i have a url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 4
-testRunner.When(string.Format("i call get keyword {0}", cityName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("i have a url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
+testRunner.When(string.Format("i call get keyword {0}", cityName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 6
 testRunner.Then("get api response in jason format", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

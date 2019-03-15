@@ -67,13 +67,19 @@ namespace SpecFlow.Hooks
         [BeforeScenario]
         public void SetupBeforeScenario(Hooks hooks)
         {
-           
-           
-            Reporter.TestName(_featureContext.FeatureInfo.Title + " : " + _scenarioContext.ScenarioInfo.Title);
 
-            //ChromeOptions options = new ChromeOptions();
-            //ChromeDriverService chrService = ChromeDriverService.CreateDefaultService("C:\\Drivers");
-            //_browser.objDriver = new ChromeDriver(chrService, options);
+            if (!ScenarioContext.Current.ScenarioInfo.Tags.Contains("API"))
+            {
+                Reporter.TestName(_featureContext.FeatureInfo.Title + " : " + _scenarioContext.ScenarioInfo.Title);
+
+                ChromeOptions options = new ChromeOptions();
+                ChromeDriverService chrService = ChromeDriverService.CreateDefaultService("C:\\Drivers");
+                _browser.objDriver = new ChromeDriver(chrService, options);
+            }
+            else
+            {
+                Reporter.TestName(_featureContext.FeatureInfo.Title + " : " + _scenarioContext.ScenarioInfo.Title);
+            }
 
 
 
@@ -93,11 +99,14 @@ namespace SpecFlow.Hooks
         [AfterScenario]
         public void CleanupAfterScenario()
         {
-           //// Reporter.FlushReport();
-           // Thread.Sleep(2000);
-           // _browser.QuitBrowser();
+             Reporter.FlushReport();
+            Thread.Sleep(2000);
 
-       
+            if (!ScenarioContext.Current.ScenarioInfo.Tags.Contains("API"))
+            {
+                _browser.QuitBrowser();
+            }
+
         }
 
 

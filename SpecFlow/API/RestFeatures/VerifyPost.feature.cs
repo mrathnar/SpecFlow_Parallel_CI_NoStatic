@@ -71,9 +71,11 @@ namespace SpecFlow.API.RestFeatures
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Update data")]
+        [NUnit.Framework.CategoryAttribute("API")]
         public virtual void UpdateData()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update data", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update data", null, new string[] {
+                        "API"});
 #line 3
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
