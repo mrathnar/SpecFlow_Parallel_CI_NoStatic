@@ -1,4 +1,4 @@
-﻿using BoDi;
+﻿        using BoDi;
 using Library;
 using Library.Utilites;
 using OpenQA.Selenium;
@@ -67,18 +67,17 @@ namespace SpecFlow.Hooks
         [BeforeScenario]
         public void SetupBeforeScenario(Hooks hooks)
         {
-            // string featureName = FeatureContext.Current.FeatureInfo.Title;
-            // hooks.FeatureName = featureName;
-
-            //string scenarioName = ScenarioContext.Current.ScenarioInfo.Title;
-            //hooks.ScenarioName = scenarioName;
+           
            
             Reporter.TestName(_featureContext.FeatureInfo.Title + " : " + _scenarioContext.ScenarioInfo.Title);
-            ChromeOptions options = new ChromeOptions();
-            ChromeDriverService chrService = ChromeDriverService.CreateDefaultService("C:\\Drivers");
-            _browser.objDriver = new ChromeDriver(chrService,options);
-            // _objectContainer.RegisterInstanceAs<IWebDriver>(_browser.objDriver);
-           
+
+            //ChromeOptions options = new ChromeOptions();
+            //ChromeDriverService chrService = ChromeDriverService.CreateDefaultService("C:\\Drivers");
+            //_browser.objDriver = new ChromeDriver(chrService, options);
+
+
+
+
 
         }
 
@@ -94,9 +93,9 @@ namespace SpecFlow.Hooks
         [AfterScenario]
         public void CleanupAfterScenario()
         {
-           // Reporter.FlushReport();
-            Thread.Sleep(2000);
-            _browser.QuitBrowser();
+           //// Reporter.FlushReport();
+           // Thread.Sleep(2000);
+           // _browser.QuitBrowser();
 
        
         }

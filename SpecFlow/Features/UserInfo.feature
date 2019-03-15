@@ -16,6 +16,9 @@ Scenario: Verify display of user controls(buttons)
 Then page shoud contains following buttons 
 | Button1 | Button2 | Button3 |
 | Login   | Submit  | Ok      |
+Scenario: Demo
+Given naviage to site
+
 
 
 
