@@ -13,7 +13,7 @@ namespace PageObjects.Pages
 
     public class LinkCheckPage
     {
-
+        //comment
         private string lnkLink = "TagName=a";
 
         UILink objLink = new UILink();

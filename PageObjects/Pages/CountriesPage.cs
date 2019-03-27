@@ -11,7 +11,7 @@ namespace PageObjects.Pages
 {
    public class CountriesPage
     { 
-        //Returns the list of countries, this is just hcnage
+        //Returns the list of countries, this is just hcn
         private string lstCountries = "Name=conlist";
         public  IList<string> expCountries = new List<string>();
         public  void VerifyDisplayofCountriesListBox(IWebDriver objDriver)
