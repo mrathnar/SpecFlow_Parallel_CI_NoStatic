@@ -38,6 +38,7 @@
       <HintPath>..\packages\RestSharp.106.6.9\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -58,6 +59,7 @@
   <ItemGroup>
     <Compile Include="API\RestSharp\Posts.cs" />
     <Compile Include="API\RestSharp\RestUtil.cs" />
+    <Compile Include="API\SoapUI\SoapUtil.cs" />
     <Compile Include="Pages\CountriesPage.cs" />
     <Compile Include="Pages\InformationPage.cs" />
     <Compile Include="Pages\LinkCheckPage.cs" />
@@ -66,8 +68,9 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="API\SoapUI\" />
+    <Content Include="API\SoapUI\CountryCodes.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

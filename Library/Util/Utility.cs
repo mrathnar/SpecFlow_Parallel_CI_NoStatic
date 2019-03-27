@@ -37,14 +37,15 @@ namespace Library.Utilites
         {
             try
             {
-                if (!Directory.Exists(path))
+                if (Directory.Exists(path))
                 {
+                   
+                    Directory.Delete(path, true);
                     Directory.CreateDirectory(path);
 
                 }
                 else
                 {
-                    Directory.Delete(path, true);
                     Directory.CreateDirectory(path);
                 }
 

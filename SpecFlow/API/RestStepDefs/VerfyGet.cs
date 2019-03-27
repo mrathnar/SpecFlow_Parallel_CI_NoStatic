@@ -33,9 +33,9 @@ namespace SpecFlow.API
         [Given(@"i have a url")]
         public void GivenIHaveAUrl()
         {
-           // RestUtil.SetBaseURL();
+          
             _restUtil.SetBaseURL(ConfigurationManager.AppSettings.Get("baseURL"));
-            Reporter.Report("Pass", "Application launched on Chrome : " + ConfigurationManager.AppSettings.Get("baseURL"));
+            
         }
 
        [When(@"i call get keyword(.*)")]

@@ -20,6 +20,7 @@ namespace SpecFlow.StepDefinitions
         {
             _browser = browser;
             _linkPage = linkPage;
+            
         }
 
         [Given(@"When i navigate to homepage")]

@@ -105,6 +105,18 @@
     </Compile>
     <Compile Include="API\RestStepDefs\VerfyGet.cs" />
     <Compile Include="API\RestStepDefs\VerifyPost.cs" />
+    <Compile Include="API\SoapFeatures\Soap_Verify_Get.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Soap_Verify_Get.feature</DependentUpon>
+    </Compile>
+    <Compile Include="API\SoapFeatures\Soap_Verify_Post.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Soap_Verify_Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="API\SoapStepDefs\Soap_Verify_Get.cs" />
+    <Compile Include="API\SoapStepDefs\Soap_Verify_Post.cs" />
     <Compile Include="Features\CountriesList.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -136,6 +148,14 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>VerifyPost.feature.cs</LastGenOutput>
     </None>
+    <None Include="API\SoapFeatures\Soap_Verify_Get.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Soap_Verify_Get.feature.cs</LastGenOutput>
+    </None>
+    <None Include="API\SoapFeatures\Soap_Verify_Post.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Soap_Verify_Post.feature.cs</LastGenOutput>
+    </None>
     <None Include="Config\App.config" />
     <None Include="Features\CountriesList.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -153,8 +173,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="API\SoapFeatures\" />
-    <Folder Include="API\SoapStepDefs\" />
     <Folder Include="Report\" />
     <Folder Include="ScreenShots\" />
   </ItemGroup>
