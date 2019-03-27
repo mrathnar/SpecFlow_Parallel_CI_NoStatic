@@ -11,7 +11,7 @@ using OpenQA.Selenium;
 namespace PageObjects
 
 {
-    // added comment for info page
+    // added comment for info page for testing
    public class InformationPage//:Selenium
     {
          private By txtUserName1=  By.Id("username");  
