@@ -15,7 +15,7 @@ using TechTalk.SpecFlow;
 
 namespace Library
 {
-
+    // browser
     public class UIBrowser //: Selenium
 
     {
@@ -76,6 +76,7 @@ namespace Library
             }
 
         }
+        //browser browser
         //public IWebDriver GetDriver()
         //{
         //    return objDriver;
