@@ -15,7 +15,8 @@ using TechTalk.SpecFlow;
 
 namespace Library
 {
-    // mster brach changes
+    // mster brach changes\
+    // did changes in local\
     public class UIBrowser //: Selenium
 
     {
