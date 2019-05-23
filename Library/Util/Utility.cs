@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 //hello
 //hello remote
 
-//Hellow local
+//Hellow locals
 namespace Library.Utilites
 {//class
     public class Utility
