@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Library.Utilites
-{
+{//class
     public class Utility
     {
         public static string ProjectPath;
