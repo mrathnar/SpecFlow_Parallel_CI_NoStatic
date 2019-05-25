@@ -95,6 +95,22 @@ namespace Library
                 return false;
             }
         }
+
+        public static bool WaitForObject1(IWebDriver objD, By objElement)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(objD, TimeSpan.FromSeconds(10));
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(objElement));
+                //IWebElement element = wait.Until(driver => BrowserDriver.objDriver.FindElement(By.Id("kk")));
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message + "object not found");
+                return false;
+            }
+        }
     }
         }
     
