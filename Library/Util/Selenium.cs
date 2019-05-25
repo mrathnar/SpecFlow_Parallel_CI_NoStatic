@@ -31,7 +31,7 @@ namespace Library
 
 
                 string[] objProp = props.Split(new[] { "=" }, 2, StringSplitOptions.None);//2 means devides into two strings based on first occurance of =
-                                                                                          // XPath =//input[@value='OK']
+                Console.WriteLine("hif");                                                                 // XPath =//input[@value='OK']
 
                 Type ClassName = typeof(By);//
                 MethodInfo MethodName = ClassName.GetMethod(objProp[0]);
