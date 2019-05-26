@@ -23,7 +23,7 @@ namespace Library
         public static  IWebElement PageObject;
         public static  IList<IWebElement> PageObjectCollection;
         public static string parentWIndow = null;
-       // UIBrowser browser = new UIBrowser();
+       // UIBrowser browser = new UIBrowser(); removed this
         public  static  IWebElement GetObject(IWebDriver objDriver, string props)
         {
             try
@@ -47,6 +47,7 @@ namespace Library
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 Console.WriteLine(e.Message);
             }
             return PageObject;
