@@ -25,7 +25,7 @@ namespace Library.Utilites
                 DirectoryInfo ParentDir = info.Directory;
                 Console.WriteLine(ParentDir);
                 ProjectPath = ParentDir.ToString();
-                Console.WriteLine("Test Messages");
+                Console.WriteLine("Test Messagesss");
 
             }
             catch (Exception ex)
